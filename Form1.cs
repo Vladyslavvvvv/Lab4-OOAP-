@@ -38,8 +38,11 @@ namespace Lab4_OOAP_
     // Інтерфейс для будівельника подарункових наборів
     public interface IGiftSetBuilder
     {
-        // Метод для створення солодощів у наборі
-        void BuildSweets();
+        // Методи для створення солодощів у наборі
+        void AddCandies();
+        void AddChocolates();
+        void AddWafers();
+        void AddDragees();
 
         // Метод для отримання готового подарункового набору
         GiftSet GetGiftSet();
@@ -51,13 +54,21 @@ namespace Lab4_OOAP_
         // Змінна для зберігання подарункового набору
         private GiftSet giftSet = new GiftSet { Name = "Ласунка (Економічний)" };
 
-        // Метод для створення солодощів
-        public void BuildSweets()
+        // Додаємо солодощі до подарункового набору
+        public void AddCandies() 
         {
-            // Додаємо солодощі до подарункового набору
             giftSet.Sweets.Add(new Sweet("Льодяники", 0.3));
+        }
+        public void AddChocolates() 
+        {
             giftSet.Sweets.Add(new Sweet("Шоколадні цукерки", 0.4));
+        }
+        public void AddWafers() 
+        {
             giftSet.Sweets.Add(new Sweet("Вафлі", 0.2));
+        }
+        public void AddDragees()
+        {
             giftSet.Sweets.Add(new Sweet("Драже", 0.1));
         }
 
@@ -72,12 +83,20 @@ namespace Lab4_OOAP_
         private GiftSet giftSet = new GiftSet { Name = "Наминайко (Стандартний)" };
 
         // Метод для створення солодощів
-        public void BuildSweets()
+        public void AddCandies()
         {
-            // Додаємо солодощі до подарункового набору
             giftSet.Sweets.Add(new Sweet("Льодяники", 0.4));
+        }
+        public void AddChocolates()
+        {
             giftSet.Sweets.Add(new Sweet("Шоколадні цукерки", 0.3));
+        }
+        public void AddWafers()
+        {
             giftSet.Sweets.Add(new Sweet("Вафлі", 0.2));
+        }
+        public void AddDragees()
+        {
             giftSet.Sweets.Add(new Sweet("Драже", 0.1));
         }
 
@@ -92,12 +111,20 @@ namespace Lab4_OOAP_
         private GiftSet giftSet = new GiftSet { Name = "Пан Коцький (Екстра)" };
 
         // Метод для створення солодощів
-        public void BuildSweets()
+        public void AddCandies()
         {
-            // Додаємо солодощі до подарункового набору
             giftSet.Sweets.Add(new Sweet("Льодяники", 0.3));
+        }
+        public void AddChocolates()
+        {
             giftSet.Sweets.Add(new Sweet("Шоколадні цукерки", 0.4));
+        }
+        public void AddWafers()
+        {
             giftSet.Sweets.Add(new Sweet("Вафлі", 0.1));
+        }
+        public void AddDragees()
+        {
             giftSet.Sweets.Add(new Sweet("Драже", 0.2));
         }
 
@@ -120,8 +147,11 @@ namespace Lab4_OOAP_
         // Метод для конструкції подарункового набору
         public GiftSet Construct(double priceCandies, double priceChocolates, double priceWafers, double priceDragees)
         {
-            // Викликаємо метод створення солодощів
-            builder.BuildSweets();
+            // Викликаємо методи створення солодощів
+            builder.AddCandies();
+            builder.AddChocolates();
+            builder.AddWafers();
+            builder.AddDragees();
 
             // Отримуємо готовий подарунковий набір
             GiftSet giftSet = builder.GetGiftSet();
